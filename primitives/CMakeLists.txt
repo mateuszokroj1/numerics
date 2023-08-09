@@ -1,8 +1,8 @@
 project(primitives)
 
-add_library(${PROJECT_NAME} STATIC vector.c)
+add_library(${PROJECT_NAME} STATIC vector.c quaternion.c)
 
-	target_include_directories(${PROJECT_NAME} PUBLIC prim_matrix.h PUBLIC prim_vector.h)
+	target_include_directories(${PROJECT_NAME} PUBLIC prim_matrix.h PUBLIC prim_vector.h PUBLIC prim_quaternion.h)
 
 	install(
 		TARGETS ${PROJECT_NAME}
