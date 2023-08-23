@@ -1,19 +1,30 @@
 #pragma once
 
-typedef struct
+#include <immintrin.h>
+#include <xmmintrin.h>
+
+typedef union quaternionf
 {
-  float e;
-  float i;
-  float j;
-  float k;
+  struct
+  {
+    float e;
+    float i;
+    float j;
+    float k;
+  };
+  __m128 _intrin;
 } quaternionf;
 
-typedef struct
+typedef union quaterniond
 {
-  double e;
-  double i;
-  double j;
-  double k;
+  struct
+  {
+    double e;
+    double i;
+    double j;
+    double k;
+  };
+  __m256d _intrin;
 } quaterniond;
 
 quaternionf prim_quaternionf_add(quaternionf a, quaternionf b);

@@ -11,3 +11,7 @@ add_library(${PROJECT_NAME} STATIC vector.c quaternion.c)
 		LIBRARY DESTINATION lib
 		PUBLIC_HEADER DESTINATION include
 	)
+
+add_executable(test_quaternion tests/test_quaternion.cpp)
+
+	target_link_libraries(test_quaternion PRIVATE ${PROJECT_NAME})
